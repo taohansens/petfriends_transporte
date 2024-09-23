@@ -12,9 +12,11 @@ public class Entrega {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long pedidoId;
-    private String destino;
     private LocalDate dataPrevisaoEntrega;
     private LocalDate dataRealizacaoEntrega;
+
+    @Embedded
+    private Endereco endereco;
 
     @Enumerated(EnumType.STRING)
     private StatusEntrega status;
